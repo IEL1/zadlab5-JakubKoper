@@ -1,15 +1,37 @@
 package pl.edu.ur.oopl5;
 
-public class Main {
+import java.util.Scanner;
 
-    public static void main(String[] args) {
-         Dane_Ksiazki k1 = new Dane_Ksiazki("Bastion", "Stephen King", 623, 1978, 36.70);
-         Dane_Ksiazki k2 = new Dane_Ksiazki("Man in the High Castle", "Philip K. Dick", 272, 2001, 46.42);
-         Dane_Ksiazki k3 = new Dane_Ksiazki("Gra o tron", "George R.R. Martin", 844, 2011, 32.02);
-         
-         k1.setCena(20.39);
-         System.out.println(k1.getCena());
-        // TODO zad 3, 5, 6
+public class Main {
+    private static void zadanie3(){
+        Scanner in = new Scanner(System.in);
+        
+        System.out.print("Podaj rozmiar stosu: ");
+        int rozmiarStosu = in.nextInt();
+        zad3_stack Stak = new zad3_stack(rozmiarStosu);
+        Stak.menu();
     }
-          
+    private static void zadanie5() {
+        Firma company1 = new Firma();
+        company1.menu();
+    }
+    public static void main(String[] args) {
+        // TODO zad 3, 5, 6
+        Scanner in = new Scanner(System.in);
+        int menu = 1;
+        
+        while(menu != 0){
+            System.out.println("3. Zadanie 3");
+            System.out.println("5. Zadanie 5");
+            System.out.println("6. Zadanie 6");
+            System.out.println("0. Wyjscie");
+            menu = in.nextInt();
+            
+            switch(menu){
+                case 3: zadanie3(); break;
+                case 5: zadanie5(); break;
+                case 0: break;                
+            }
+        }    
+    }
 }
